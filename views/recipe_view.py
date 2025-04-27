@@ -1,6 +1,9 @@
-def recipe_response(recipes: list) -> dict:
+from constants.app_constants import AppConstants
+
+
+def recipe_response(result_code, recipes: list) -> dict:
     return {
-        "result_code": RESULT_CODE_SUCCESS,
-        "result_message": MESSAGE_SUCCESS,
+        "result_code": result_code,
+        "result_message": AppConstants.RESULT_MESSAGE[result_code],
         "data": {"count": len(recipes), "recipes": recipes},
     }
