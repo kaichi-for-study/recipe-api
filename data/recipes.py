@@ -1,21 +1,19 @@
-from data.recipes import RECIPE_LIST
-
-
-class RecipeModel:
-    # レシピのリストを初期化
-    def __init__(self):
-        self.recipe = RECIPE_LIST
-
-    # レシピのリストを取得
-    def find_recipes(self, ingredients: list, buget: int) -> list:
-
-        # レシピの材料が全てingredientsに含まれている かつ 予算内であればレシピを追加
-        available_recipes = []
-        for recipe in self.find_recipes:
-            if (
-                set(recipe["ingredients"]).issubset(set(ingredients))
-                and recipe["price"] <= buget
-            ):
-                available_recipes.append(recipe)
-
-        return available_recipes
+RECIPE_LIST = [
+    {
+        "name": "チキンカレー",
+        "ingredients": ["鶏肉", "じゃがいも", "玉ねぎ", "にんじん"],
+        "price": 1200,
+    },
+    {"name": "ほうれん草ソテー", "ingredients": ["ほうれん草"], "price": 500},
+    {
+        "name": "肉じゃが",
+        "ingredients": ["鶏肉", "じゃがいも", "玉ねぎ", "にんじん"],
+        "price": 1000,
+    },
+    {
+        "name": "クリームシチュー",
+        "ingredients": ["鶏肉", "じゃがいも", "玉ねぎ", "にんじん", "ほうれん草"],
+        "price": 1500,
+    },
+    {"name": "鶏肉の照り焼き", "ingredients": ["鶏肉"], "price": 800},
+]
